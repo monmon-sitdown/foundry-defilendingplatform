@@ -26,3 +26,9 @@ contract DeployPlatform is Script {
  * TokenA deployed to: 0x36bFCebFfcAac1E6d6C2Dc39f2C7a2190359754B
  *   SimpleLendingPlatform deployed to: 0x94f394Db5e958E296670BF494c723B6fab52d3fD
  */
+
+/**
+ * == Logs ==
+ *   TokenA deployed to: 0x6d7f258B6A88F7BDdFefC2183f13624a05C1B2be 成功
+ *   SimpleLendingPlatform deployed to: 0x2df6AfB485ff06e16AEFD4cFe0485E62f65870Fb 失败
+ */

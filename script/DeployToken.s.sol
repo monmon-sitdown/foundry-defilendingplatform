@@ -10,7 +10,7 @@ contract DeployToken is Script {
         vm.startBroadcast();
 
         // 输出部署后的合约地址
-        // console.log("LendingToken deployed to:", address(tokenA));
+        //console.log("LendingToken deployed to:", address(tokenA));
 
         vm.stopBroadcast();
     }

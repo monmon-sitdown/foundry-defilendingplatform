@@ -1,66 +1,66 @@
-## Foundry
+# Simple Lending Platform
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+The **Simple Lending Platform** is a decentralized application (DApp) built on the Ethereum blockchain that allows users to deposit tokens, borrow against their deposits, and repay borrowed amounts with interest. The platform leverages the ERC20 token standard and employs a reentrancy guard to ensure secure interactions.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Features
 
-## Documentation
+- **Deposits**: Users can deposit ERC20 tokens into the platform, which are then tracked as deposits.
+- **Withdrawals**: Users can withdraw their deposited tokens at any time, subject to available balance.
+- **Borrowing**: Users can borrow tokens against their deposits based on a defined collateral factor, allowing for leveraged borrowing.
+- **Repayment**: Borrowed amounts can be repaid, allowing users to settle their debts and reclaim their collateral.
+- **Interest Calculation**: The platform applies a fixed annual interest rate to borrowed amounts.
 
-https://book.getfoundry.sh/
+## Key Parameters
+
+- **Interest Rate**: The platform charges a 5% annual interest rate on borrowed amounts.
+- **Collateral Factor**: The collateral factor is set to 75%, meaning users can borrow up to 75% of their deposited amount.
 
 ## Usage
 
-### Build
+1. **Deposit Tokens**: Users can deposit their tokens by specifying an amount. The tokens will be transferred from the user's wallet to the platform's contract.
+2. **Withdraw Tokens**: Users can withdraw tokens they previously deposited, given that their withdrawal amount does not exceed their balance.
+3. **Borrow Tokens**: Users can borrow tokens up to the maximum allowed, which is determined by their collateralized deposits.
+4. **Repay Loans**: Users can repay borrowed tokens, reducing their outstanding debt.
 
-```shell
-$ forge build
+## Installation and Setup
+
+To deploy and interact with the Simple Lending Platform, ensure you have the following prerequisites:
+
+- Install Foundry
+- Solidity: Version 0.8.20 or higher
+- OpenZeppelin Contracts: For secure smart contract development
+
+### Getting Started
+
+1. **Clone the repository**
+
+```
+git clone https://github.com/monmon-sitdown/SimpleDefiLendingPlatform.git
+cd SimpleDefiLendingPlatform
 ```
 
-### Test
+2. **Install Dependencies**:
+   Make sure you have Foundry installed. Then run:
 
-```shell
-$ forge test
+```
+forge install
 ```
 
-### Format
+### Deployment
 
-```shell
-$ forge fmt
-```
+#### LendingToken Contract
 
-### Gas Snapshots
+An ERC20 token contract named **LendingToken (LTK)** is deployed on the network for testing. This token allows users to mint new tokens and facilitates the lending operations within the platform. The LendingToken contract includes:
 
-```shell
-$ forge snapshot
-```
+- **Minting Functionality**: Users can mint new tokens to their addresses.
+- **Initial Supply**: The contract is initialized with a specified supply.
 
-### Anvil
+#### SimpleLendingPlatform Contract
 
-```shell
-$ anvil
-```
+The main lending contract is designed to manage user deposits, borrowing limits, and interest calculations.
 
-### Deploy
+### Testing
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+The contracts can be tested using Foundry's testing framework.
