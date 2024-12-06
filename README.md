@@ -32,22 +32,6 @@ To deploy and interact with the Simple Lending Platform, ensure you have the fol
 - Solidity: Version 0.8.20 or higher
 - OpenZeppelin Contracts: For secure smart contract development
 
-### Getting Started
-
-1. **Clone the repository**
-
-```
-git clone https://github.com/monmon-sitdown/SimpleDefiLendingPlatform.git
-cd SimpleDefiLendingPlatform
-```
-
-2. **Install Dependencies**:
-   Make sure you have Foundry installed. Then run:
-
-```
-forge install
-```
-
 ### Deployment
 
 #### LendingToken Contract
